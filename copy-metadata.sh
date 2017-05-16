@@ -16,6 +16,6 @@ vnet:$vnet
 cdir:$cdir
 subnet:$subnet
 subscription:$subscription
-storagename:$storagename" >> metadata.txt 
+storagename:$storagename" >> /etc/metadata.txt 
 
 # begin deployment of RPM 
