@@ -36,6 +36,8 @@ for d in "${datadisks[@]}"; do
     RAID_CMD+="${disk}1 "
 done
 
+RAID_CMD+=" --force"
+
 # Build RAID device
 eval "$RAID_CMD"
 
