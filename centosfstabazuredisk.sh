@@ -12,7 +12,7 @@ cp /etc/fstab /etc/fstab.orig
 
 # Enumerate data disks attached to VM 
 # Leverages udev rules for Azure storage devices located at https://github.com/Azure/WALinuxAgent/blob/2.0/config/66-azure-storage.rules
-attached='basename -a $(find /sys/class/block -name 'sd[a-z]')'
+attached="basename -a $(find /sys/class/block -name 'sd[a-z]')"
 reserved='basename -a $(readlink -f /dev/disk/azure/root /dev/disk/azure/resource)'
 datadisks=(${attached[@]/$reserved})
 
