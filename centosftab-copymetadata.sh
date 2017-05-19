@@ -74,3 +74,25 @@ mount -a
 # After initial provisioning, use these commands to obtain disk device or UUID of filesystem based on label
 # disk=$(blkid -L ${fslabel})
 # uuid=$(blkid | grep "LABEL=\"${fslabel}\"" | grep -oP '[-a-z0-9]{36}')
+
+
+# Cloud Init Data - no ifdown no ifup 
+
+# echo '[[1, "$masterIP"], [2, "10.0.3.253"], [3, "10.0.3.254"]]' > /etc/orchestrators;
+# touch /etc/wait_to_start_orchestrator;
+# yum install -y --disablerepo=* --enablerepo=foundation mpmgr;
+# python /opt/tetration/mpmgr/mount_point_manager.py;
+# yum install -y --disablerepo=* --enablerepo=foundation consul orchestrator vault ui-setup rpminstall terraform azmgr;# cp /etc/yum.local.repos.d/local.repo /etc/yum.repos.d;
+# sed -i /BOOTPROTO/d /etc/sysconfig/network-scripts/ifcfg-eth0;
+# sed -i -e s/^BOOTPROTO.*/BOOTPROTO=static/ /etc/sysconfig/network-scripts/ifcfg-eth0;
+# sed -i -e s/^IPADDR.*// /etc/sysconfig/network-scripts/ifcfg-eth0;
+# sed -i -e s/^NETMASK.*// /etc/sysconfig/network-scripts/ifcfg-eth0;
+# sed -i -e s/^GATEWAY.*// /etc/sysconfig/network-scripts/ifcfg-eth0;
+# echo IPADDR=10.0.3.252 >> /etc/sysconfig/network-scripts/ifcfg-eth0;
+# echo NETMASK=255.255.0.0 >> /etc/sysconfig/network-scripts/ifcfg-eth0;
+# ifdown eth0;
+# ifup eth0;
+# echo '[]' >> /etc/secrets;
+# chown root:root /etc/secrets;
+# chmod 600 /etc/secrets;
+#     echo -e "private-1: ifname: eth0 public: ifname: eth1 " > /etc/active_ifs.yml
