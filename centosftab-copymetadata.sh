@@ -12,6 +12,9 @@ storagename=$7
 # this will be the first param passed into the script execution
 mp=$8
 
+# masterIP
+masterIP=$9 
+
 # write content to file in /etc/metadata
 
 printf '{"deploymentName":"%s", "region":"%s","vnet":"%s","cdir":"%s","subnet":"%s","subscription":"%s","storagename":"%s"}\n' "$deploymentName" "$region" "$vnet" "$cdir" "$subnet" "$subscription" "$storagename" >> /etc/orca-master.json
